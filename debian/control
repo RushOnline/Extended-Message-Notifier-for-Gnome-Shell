@@ -1,0 +1,17 @@
+Source: gnome-shell-extensions-extended-message-notifier
+Section: utils
+Priority: optional
+Maintainer: Rush (Tonop) Online <rush.zlo@gmail.com>
+Build-Depends: cdbs, debhelper
+Standards-Version: 3.8.3
+Homepage: https://github.com/RushOnline/Extended-Message-Notifier-for-Gnome-Shell
+
+Package: gnome-shell-extensions-extended-message-notifier
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: GNOME Shell IM message notifier
+ Shows if you have unread IM messages. This version has blinking
+ number of awaiting messages in top panel for 5 minutes.
+ .
+ Originally created by Marco Barisione <marco@barisione.org>
+ and packaged by Alin Andrei <webupd8@gmail>

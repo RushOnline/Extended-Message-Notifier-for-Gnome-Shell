@@ -1,0 +1,4 @@
+extension.js             usr/share/gnome-shell/extensions/message-notifier@shell-extensions.barisione.org/
+stylesheet.css          usr/share/gnome-shell/extensions/message-notifier@shell-extensions.barisione.org/
+metadata.json           usr/share/gnome-shell/extensions/message-notifier@shell-extensions.barisione.org/
+notification-icon.jpg   usr/share/gnome-shell/extensions/message-notifier@shell-extensions.barisione.org/
