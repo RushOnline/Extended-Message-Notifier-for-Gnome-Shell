@@ -86,6 +86,27 @@ MessageLabel.prototype = {
         this.santa = null;
     },
 
+    _fadeOut: function() {
+        Tweener.addTween(this.countLabel, {
+            opacity: 255,
+            time: 0.5,
+            transition: 'easeOutCubic',
+            onComplete: Lang.bind(this, this._fadeIn)
+        });
+    },
+
+    _fadeIn: function() {
+        this.blinkCount = this.blinkCount - 1;
+        if (this.blinkCount > 0) {
+            Tweener.addTween(this.countLabel, {
+                opacity: 0,
+                time: 0.5,
+                transition: 'easeOutCubic',
+                onComplete: Lang.bind(this, this._fadeOut)
+            });
+        }
+    },
+
     updateCount: function() {
         let count = 0;
 
@@ -100,10 +121,15 @@ MessageLabel.prototype = {
         this.countLabel.visible = count > 0;
         this.countLabel.set_text(count.toString());
 
+        Tweener.removeTweens(this.countLabel);
+
         /* Only notify if we have at least one message, and the count hasn't
          * reduced. */
         if (count > 0 && count >= this.oldCount) {
             this._showSanta();
+            
+            this.blinkCount = 300;
+            this._fadeOut();
         }
 
         this.oldCount = count;
